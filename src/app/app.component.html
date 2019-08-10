@@ -2,22 +2,32 @@
   <ion-split-pane>
     <ion-menu type="overlay">
       <ion-header>
-        <ion-toolbar>
-          <ion-title>Menu</ion-title>
+        <ion-toolbar color="primary">
+          <ion-title text-center>Password Locker</ion-title>
         </ion-toolbar>
       </ion-header>
       <ion-content>
-        <ion-list>
+        <ion-list lines="none">
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
             <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
-              <ion-icon slot="start" [name]="p.icon"></ion-icon>
+              <img class="icon-set" src="{{ p.image }}" alt="" />
               <ion-label>
-                {{p.title}}
+                {{ p.title }}
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
       </ion-content>
+
+      <ion-footer style="background:#ebebeb;">
+        <img
+          style="vertical-align:middle;margin-left: 5%;padding: 2%;"
+          src="assets/icon/logout.png"
+        />
+        <div style="vertical-align:middle; display:inline;">
+          Logout
+        </div>
+      </ion-footer>
     </ion-menu>
     <ion-router-outlet main></ion-router-outlet>
   </ion-split-pane>
